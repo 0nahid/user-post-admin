@@ -21,11 +21,8 @@ export default function Header() {
           <span className="ml-3 text-xl">User Posts</span>
         </Link>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <Link to="/1" className="mr-5 hover:text-gray-900">
+          <Link to="/" className="mr-5 hover:text-gray-900">
             Home
-          </Link>
-          <Link to="/posts" className="mr-5 hover:text-gray-900">
-            Posts
           </Link>
           {user?.email && (
             <Link to="/3" className="mr-5 hover:text-gray-900">

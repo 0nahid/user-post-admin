@@ -1,8 +1,17 @@
+import { Link } from "react-router-dom";
+
 export default function Posts(props) {
-    console.log(props);
-    return (
+  const { title, id } = props.post;
+  return (
+    <>
+      <div className="my-2 p-5 px-2 w-full overflow-hidden sm:w-full md:w-1/2 lg:w-1/4 xl:w-1/4">
         <div>
-            <h1>Hello </h1>
+          <h1>{title.toUpperCase()}</h1>
         </div>
-    )
+        <div>
+          <Link to={`posts/${id}`}>View Post</Link>
+        </div>
+      </div>
+    </>
+  );
 }

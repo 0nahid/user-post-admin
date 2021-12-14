@@ -1,19 +1,19 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import Posts from "./Posts";
 
 export default function Post() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     axios("https://jsonplaceholder.typicode.com/posts").then(
-      (data) => setPosts(data.data)
-      // console.log(data.data)
+      (data) => setPosts(data.data) // data.data is the data from the api
     );
   }, []);
+
   return (
-    <div className="text-center text-red-700 text-4xl">
-      Post will be loaded here
+    <div className="flex flex-wrap container p-10 mx-auto overflow-hidden">
       {posts.map((post) => (
-        <Post post={post} key={post.id}></Post>
+        <Posts post={post} key={post.id} />
       ))}
     </div>
   );

@@ -5,7 +5,7 @@ import Header from "./Components/Header";
 import AuthProvider from "./Context/AuthProvider";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
-import Posts from "./Pages/Posts";
+import PostDetails from "./Pages/PostDetails";
 export default function App() {
   return (
     <AuthProvider>
@@ -13,7 +13,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts/:postId" element={<PostDetails />} />
       </Routes>
       <Footer />
     </AuthProvider>
