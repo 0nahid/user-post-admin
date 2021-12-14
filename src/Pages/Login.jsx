@@ -5,7 +5,7 @@ export default function Login() {
   return (
     <div className=" bg-gray-300">
       <div className="container h-screen flex justify-center items-center m-auto">
-        <div className="w-1/4 p-8 bg-white rounded-lg max-w-6xl pb-10">
+        <div className="lg:w-1/3 md:w-1/2 w-full p-8 bg-white rounded-lg max-w-6xl pb-10">
           <div className="flex justify-center mb-4">
             {" "}
             <h1 className="font-bold">LOGIN HERE</h1>{" "}
