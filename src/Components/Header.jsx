@@ -24,7 +24,7 @@ export default function Header() {
           <Link to="/1" className="mr-5 hover:text-gray-900">
             Home
           </Link>
-          <Link to="/2" className="mr-5 hover:text-gray-900">
+          <Link to="/posts" className="mr-5 hover:text-gray-900">
             Posts
           </Link>
           {user?.email && (
