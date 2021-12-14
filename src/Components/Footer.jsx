@@ -29,6 +29,15 @@ export default function Footer() {
             >
               @0nahid
             </a>
+            <span className="ml-2">&</span>
+            <a
+              href="https://github.com/rifatsaown"
+              className="text-gray-600 ml-1"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              @rifatsaown
+            </a>
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <Link to="/" className="text-gray-500">
