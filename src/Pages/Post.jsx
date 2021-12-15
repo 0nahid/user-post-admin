@@ -11,7 +11,7 @@ export default function Post() {
   }, []);
 
   return (
-    <div className="flex flex-wrap container p-10 mx-auto overflow-hidden">
+    <div className="flex flex-wrap container p-10 mx-auto overflow-hidden m-2 border">
       {posts.map((post) => (
         <Posts post={post} key={post.id} />
       ))}
