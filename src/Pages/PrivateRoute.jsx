@@ -1,25 +1,8 @@
-// import { Route, Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 
-// import useAuth from "../Hooks/useAuth";
+export default function PrivateRoute({ children, ...rest }) {
+  const { user } = useAuth();
 
-// export default function PrivateRoute({ children, ...rest }) {
-//   const { user } = useAuth();
-
-//   return (
-//     <Route
-//       {...rest}
-//       render={({ location }) =>
-//         user?.email ? (
-//           children
-//         ) : (
-//           <Redirect
-//             to={{
-//               pathname: "/login",
-//               state: { from: location },
-//             }}
-//           />
-//         )
-//       }
-//     />
-//   );
-// }
+  return user?.email ? children : <Navigate to="/login" />;
+}

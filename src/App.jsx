@@ -12,10 +12,16 @@ export default function App() {
     <AuthProvider>
       <Header />
       <Routes>
-        {/* <PrivateRoute path="/" element={<Home />} /> */}
-        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/posts/:postId" element={<PostDetails />} />
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        />
       </Routes>
       <Footer />
     </AuthProvider>
