@@ -9,7 +9,7 @@ export default function Posts(props) {
           <h1>{title.toUpperCase()}</h1>
         </div>
         <div>
-          <Link to={`posts/${id}`}>View Post</Link>
+          <Link to={`posts/${id}`} style="background-color:blue ; border: none; color: white; padding: 5px 10px;">View Post</Link>
         </div>
       </div>
     </>
