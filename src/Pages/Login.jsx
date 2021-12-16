@@ -1,7 +1,18 @@
 import useAuth from "../Hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const { signInWithGoogle } = useAuth();
+  const navigator = useNavigate();
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        navigator(-1);
+      })
+      .then((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className=" bg-gray-300">
       <div className="container h-screen flex justify-center items-center m-auto">
@@ -19,7 +30,7 @@ export default function Login() {
             <hr className="w-full" />
           </div>{" "}
           <button
-            onClick={signInWithGoogle}
+            onClick={handleGoogleSignIn}
             className="uppercase h-12 mt-3 text-white w-full rounded bg-red-800 hover:bg-red-900"
           >
             <i className="fa fa-google mr-2"></i>Google
