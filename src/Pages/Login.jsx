@@ -1,10 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 export default function Login() {
-  const { signInWithGoogle } = useAuth();
+  const { signInWithGoogle, signInWithFacebook } = useAuth();
   const navigator = useNavigate();
   const handleGoogleSignIn = () => {
     signInWithGoogle()
+      .then((result) => {
+        navigator(-1);
+      })
+      .then((error) => {});
+  };
+  const handleFacebookSignIn = () => {
+    signInWithFacebook()
       .then((result) => {
         navigator(-1);
       })
@@ -18,7 +25,10 @@ export default function Login() {
             {" "}
             <h1 className="font-bold">LOGIN HERE</h1>{" "}
           </div>{" "}
-          <button className="uppercase h-12 mt-3 text-white w-full rounded bg-blue-800 hover:bg-blue-900">
+          <button
+            onClick={handleFacebookSignIn}
+            className="uppercase h-12 mt-3 text-white w-full rounded bg-blue-800 hover:bg-blue-900"
+          >
             <i className="fa fa-facebook mr-2"></i>Facebook
           </button>{" "}
           <div className="flex justify-between items-center mt-3">
