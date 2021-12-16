@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 export default function PostDetails() {
   const { postId } = useParams();
+
   // post details
   const [post, setPost] = useState({});
   useEffect(() => {
@@ -27,8 +28,12 @@ export default function PostDetails() {
       </div>
       <hr className="m-5" />
       <div className="text-yellow-500">Comment Details:</div>
+
       {comment.map((comment) => (
-        <div key={comment.id} className="p-5">
+        <div
+          key={comment.id}
+          className="p-5 mt-2 border-red-500 border rounded"
+        >
           <li>
             <span className="font-bold">Name: {comment.name}</span>
             <br />
@@ -38,6 +43,29 @@ export default function PostDetails() {
           </li>
         </div>
       ))}
+
+      {/* Navigator Button */}
+      <div className="inline-flex mt-3">
+        <Link
+          to={`/posts/${
+            Number(postId) > 1 ? Number(postId - 1) : Number(postId)
+          }`}
+        >
+          <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2">
+            Prev
+          </button>
+        </Link>
+
+        <Link
+          to={`/posts/${
+            Number(postId) <= 99 ? Number(postId) + 1 : Number(postId)
+          }`}
+        >
+          <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+            Next
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }

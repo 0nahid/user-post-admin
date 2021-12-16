@@ -25,11 +25,6 @@ export default function Header() {
             Home
           </Link>
           {user?.email && (
-            <Link to="/3" className="mr-5 hover:text-gray-900">
-              Comments
-            </Link>
-          )}
-          {user?.email && (
             <span className="flex items-center">
               <img
                 className="w-10 h-10 rounded-full mr-1"

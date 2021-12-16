@@ -4,7 +4,7 @@ export default function Posts(props) {
   const { title, id } = props.post;
   return (
     <>
-      <div className="p-5 w-full overflow-hidden sm:w-full md:w-1/2 lg:w-1/4 xl:w-1/4 border">
+      <div className="p-5 mt-2 mb-2 rounded w-full overflow-hidden sm:w-full md:w-1/2 lg:w-1/4 xl:w-1/4 border">
         <div className=" text-base ">
           <h1>{title.toUpperCase()}</h1>
         </div>

@@ -1,6 +1,5 @@
-import useAuth from "../Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-
+import useAuth from "../Hooks/useAuth";
 export default function Login() {
   const { signInWithGoogle } = useAuth();
   const navigator = useNavigate();
@@ -9,9 +8,7 @@ export default function Login() {
       .then((result) => {
         navigator(-1);
       })
-      .then((error) => {
-        console.log(error);
-      });
+      .then((error) => {});
   };
   return (
     <div className=" bg-gray-300">
